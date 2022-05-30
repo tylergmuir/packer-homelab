@@ -156,7 +156,6 @@ source "vsphere-iso" "linux-ubuntu-server" {
   ssh_password = var.ssh_password
   ssh_username = var.ssh_username
   ssh_timeout = "30m"
-  #shutdown_command = "sudo cloud-init clean; sudo rm -f /etc/sudoers.d/ubuntu; shutdown now"
 }
 
 build {
