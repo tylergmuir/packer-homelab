@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+sudo adduser --disabled-password --gecos "Ansible" ansible
+sudo mkdir --mode=700 /home/ansible/.ssh
+sudo chown ansible:ansible /home/ansible/.ssh
+echo "ssh-rsa AAAAB...IEb8=" | sudo tee /home/ansible/.ssh/authorized_keys > /dev/null
+sudo chown ansible:ansible /home/ansible/.ssh/authorized_keys
+sudo chmod 600 /home/ansible/.ssh/authorized_keys
+echo 'ansible ALL=(ALL) NOPASSWD:ALL' | sudo tee /etc/sudoers.d/ansible > /dev/null
+sudo chmod 440 /etc/sudoers.d/ansible

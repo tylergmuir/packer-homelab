@@ -1,0 +1,14 @@
+#cloud-config
+autoinstall:
+    version: 1
+    early-commands:
+        - sudo systemctl stop ssh # workaround to stop ssh for packer as it thinks it timed out
+    update: yes
+    identity:
+        hostname: ubuntu-template
+        username: ubuntu
+        password: $6$rounds=4096$CWSNmbr5Em0/r7rY$W7xzXnRHuQcJsbl5RrFgj6MIT9qvelkoyG85T9D3sMF/XeiStkorGP0bC2850.ei9KFirX3ylIYSKWvEnJvU5/
+    ssh:
+        install-server: yes
+    late-commands:
+        - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu

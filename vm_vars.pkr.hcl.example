@@ -1,0 +1,8 @@
+vcenter_username   = "username@vsphere.local"
+vcenter_password   = "P@ssw0rd!"
+vcenter_server     = "vcenter.domain.com"
+vcenter_datacenter = "Datacenter"
+vcenter_cluster    = "Cluster"
+vcenter_datastore  = "Datastore"
+vcenter_network    = "VM Network"
+vcenter_folder     = "Templates"
